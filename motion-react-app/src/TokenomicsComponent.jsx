@@ -86,11 +86,13 @@ const TokenomicsComponent = () => {
 
           {/* Copy success message */}
           {copySuccess && (
-            <p className="text-green-400 mt-2 text-sm">Copied to clipboard!</p>
+            <p className="text-green-400 mt-2 text-sm">
+              THE MOTION CORPORATION THANKS YOU FOR YOUR SERVICE{" "}
+            </p>
           )}
 
           {/* Buttons with GIFs */}
-          <div className="flex pt-2 flex-row items-center space-y-0 space-y-0 space-x-4 md:pt-6 lg:pt-6">
+          <div className="flex pt-2 flex-row items-center space-y-0 space-x-4 md:pt-6 lg:pt-6">
             {/* Buy Motion Button */}
             <a
               href="#"
