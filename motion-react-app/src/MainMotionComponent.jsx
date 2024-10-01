@@ -1,3 +1,4 @@
+// src/MainMotionComponent.jsx
 import { useState } from "react"; // Import useState hook for toggle functionality
 import logo from "./assets/white_logo.png";
 import moneyGif from "./assets/falling_money.gif";
@@ -37,7 +38,7 @@ const MainMotionComponent = () => {
   };
 
   return (
-    <div className="relative w-full flex flex-col items-center justify-center lg:min-h-screen">
+    <div className="relative w-full flex flex-col items-center justify-center lg:min-h-screen font-anton">
       {/* Top logo */}
       <img
         src={logo}
@@ -49,7 +50,7 @@ const MainMotionComponent = () => {
       <img
         src={moneyGif}
         alt="Falling Money"
-        className="absolute top-0 left-0 w-full h-[calc(100vh-200px)] opacity-80 lg:absolute top-0 left-0 w-full h-full object-cover opacity-80"
+        className="absolute top-0 left-0 w-full h-full object-cover opacity-80"
       />
 
       {/* Spiral GIF */}
@@ -74,10 +75,10 @@ const MainMotionComponent = () => {
 
       {/* Side Menu */}
       {menuOpen && (
-        <div
-          className="fixed top-0 right-0 w-[375px] h-full z-30 bg-transparent overflow-hidden"
-          style={{ backgroundColor: "rgba(0, 0, 0, 0.9)" }} // Semi-transparent background
-        >
+        <div className="fixed top-0 right-0 w-[375px] md:w-[450px] lg:w-[500px] h-full z-30 bg-transparent overflow-y-auto">
+          {/* Overlay for better visibility */}
+          <div className="absolute inset-0 bg-black opacity-50"></div>
+
           {/* Menu GIF */}
           <img
             src={menuGif}
@@ -87,7 +88,7 @@ const MainMotionComponent = () => {
 
           {/* Close Button */}
           <button
-            className="absolute top-4 right-4 z-10"
+            className="absolute top-4 right-4 z-40"
             onClick={toggleMenu}
             style={{ background: "none", border: "none" }}
           >
@@ -95,16 +96,16 @@ const MainMotionComponent = () => {
           </button>
 
           {/* Menu Content */}
-          <div className="relative z-10 flex flex-col items-center mt-16 px-4">
+          <div className="relative z-50 flex flex-col items-center mt-16 px-6">
             {/* Menu Header */}
             <img
               src={menuHeaderGif}
               alt="Menu Header"
-              className="w-full mb-4"
+              className="w-10/12 mb-4"
             />
 
             {/* Text Items */}
-            <div className="mt-4 text-black space-y-4">
+            <div className="mt-4 text-black text-center space-y-4">
               <p className="text-lg">no emotion, just motion.</p>
               <p className="text-lg">how to buy motion.</p>
               <p className="text-lg">tokenomics.</p>
@@ -112,7 +113,7 @@ const MainMotionComponent = () => {
           </div>
 
           {/* Social Media Icons - Horizontally Aligned */}
-          <div className="absolute bottom-8 left-0 right-0 flex justify-around items-center px-4 z-10">
+          <div className="absolute bottom-8 left-0 right-0 flex justify-around items-center px-4 z-50">
             <a
               href="https://dexscreener.com"
               target="_blank"
@@ -121,7 +122,7 @@ const MainMotionComponent = () => {
               <img
                 src={dexscreenerIcon}
                 alt="Dexscreener"
-                className="w-8 h-8"
+                className="w-10 h-10"
               />
             </a>
             <a
@@ -129,28 +130,28 @@ const MainMotionComponent = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={telegramIcon} alt="Telegram" className="w-8 h-8" />
+              <img src={telegramIcon} alt="Telegram" className="w-10 h-10" />
             </a>
             <a
               href="https://x.com/motioncoineth"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={xIcon} alt="X" className="w-8 h-8" />
+              <img src={xIcon} alt="X" className="w-10 h-10" />
             </a>
             <a
               href="https://instagram.com/motioncoineth"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={instagramIcon} alt="Instagram" className="w-8 h-8" />
+              <img src={instagramIcon} alt="Instagram" className="w-10 h-10" />
             </a>
             <a
               href="https://tiktok.com/@motioncoineth"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={tiktokIcon} alt="TikTok" className="w-8 h-8" />
+              <img src={tiktokIcon} alt="TikTok" className="w-10 h-10" />
             </a>
           </div>
         </div>
@@ -161,7 +162,7 @@ const MainMotionComponent = () => {
         <img
           src={mainVideo}
           alt="Main Motion Video"
-          className="w-96 md:w-[32rem] h-auto lg:w-[32rem] h-auto"
+          className="w-96 md:w-[32rem] h-auto lg:w-[32rem]"
         />
 
         {/* Contract Address and Buttons */}
