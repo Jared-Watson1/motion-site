@@ -20,7 +20,7 @@ const TokenomicsComponent = () => {
   };
 
   return (
-    <div className="relative w-full min-h-screen text-white flex flex-col items-center justify-center px-8 md:px-16 lg:px-24 py-32">
+    <div className="relative w-full text-white flex flex-col items-center justify-center px-8 pt-10 md:px-16 lg:px-24, pt-40 md: pt-32">
       {/* Motion GIF at the top */}
       <div className="absolute top-10 w-full h-16 md:h-40 lg:h-25 z-10">
         <img
@@ -40,7 +40,7 @@ const TokenomicsComponent = () => {
       </div>
 
       {/* Content Area */}
-      <div className="relative z-30 w-full flex flex-col items-center justify-center space-y-16 mt-40">
+      <div className="relative z-30 w-full flex flex-col items-center justify-center space-y-16 mt-20">
         {/* Tokenomics Header */}
         <h3 className="text-4xl font-bold text-white tracking-wider">
           TOKENOMICS
@@ -74,8 +74,8 @@ const TokenomicsComponent = () => {
             className="bg-gray-900 bg-opacity-75 text-white py-2 px-4 rounded-lg border border-white flex items-center space-x-2 cursor-pointer"
             onClick={copyToClipboard}
           >
-            <p className="text-sm md:text-lg font-mono tracking-wider">
-              CA: {contractAddress}
+            <p className="text-sm md:text-lg font-mono flex items-center">
+              CA: <span className="ml-1">{contractAddress}</span>
             </p>
             <img
               src={copyIcon}
@@ -90,9 +90,14 @@ const TokenomicsComponent = () => {
           )}
 
           {/* Buttons with GIFs */}
-          <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6">
+          <div className="flex pt-2 flex-row items-center space-y-0 space-y-0 space-x-4 md:pt-6 lg:pt-6">
             {/* Buy Motion Button */}
-            <a href="#" target="_blank" rel="noopener noreferrer">
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex"
+            >
               <img
                 src={buyButton}
                 alt="Buy Motion Button"
@@ -101,7 +106,12 @@ const TokenomicsComponent = () => {
             </a>
 
             {/* Motion Chart Button */}
-            <a href="#" target="_blank" rel="noopener noreferrer">
+            <a
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex"
+            >
               <img
                 src={chartButton}
                 alt="Motion Chart Button"

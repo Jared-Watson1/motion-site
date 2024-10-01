@@ -22,19 +22,19 @@ const MainMotionComponent = () => {
   };
 
   return (
-    <div className="relative w-full min-h-screen flex flex-col items-center justify-center">
+    <div className="relative w-full flex flex-col items-center justify-center lg:min-h-screen">
       {/* Top logo */}
       <img
         src={logo}
         alt="Logo"
-        className="absolute top-5 left-5 w-16 md:w-20"
+        className="absolute top-5 left-5 w-24 md:w-20"
       />
 
       {/* Falling Money GIF */}
       <img
         src={moneyGif}
         alt="Falling Money"
-        className="absolute top-0 left-0 w-full h-full object-cover opacity-80"
+        className="absolute top-0 left-0 w-full h-[calc(100vh-200px)] opacity-80 lg:absolute top-0 left-0 w-full h-full object-cover opacity-80"
       />
 
       {/* Spiral GIF */}
@@ -43,82 +43,81 @@ const MainMotionComponent = () => {
         alt="Spiral Motion"
         className="absolute top-10 right-2 md:top-16 md:right-16 w-20 md:w-36"
       />
-
       {/* Main Content */}
-      <div className="relative z-10 text-center w-full px-4 mt-12 flex flex-col items-center">
+      <div className="relative z-10 pt-5 mt-0 text-center w-full px-4 flex flex-col items-center md:pt-5 lg:pt-30">
         <img
           src={mainVideo}
           alt="Main Motion Video"
-          className="w-64 md:w-96 lg:w-[32rem] h-auto"
+          className="w-96 md:w-[32rem] h-auto lg:w-[32rem] h-auto"
         />
 
-        {/* Contract Address */}
-        <div
-          className="bg-gray-900 bg-opacity-75 text-white py-2 px-4 mt-6 rounded-lg border border-white flex items-center space-x-2 cursor-pointer"
-          onClick={copyToClipboard}
-        >
-          <p className="text-sm md:text-lg font-mono">CA: {contractAddress}</p>
-          <img
-            src={copyIcon}
-            alt="Copy Icon"
-            className="w-4 h-4 md:w-5 md:h-5"
-          />
+        {/* Contract Address and Buttons */}
+        <div className="flex flex-col md:items-center justify-between space-y-6 md:space-y-0 md:space-x-6 mt-6">
+          {/* Contract Address */}
+          <div
+            className="bg-gray-900 bg-opacity-75 text-white py-2 px-4 rounded-lg border border-white flex items-center space-x-2 cursor-pointer"
+            onClick={copyToClipboard}
+          >
+            <p className="text-sm md:text-lg font-mono flex items-center">
+              CA: <span className="ml-1">{contractAddress}</span>
+            </p>
+            <img
+              src={copyIcon}
+              alt="Copy Icon"
+              className="w-4 h-4 md:w-5 md:h-5"
+            />
+          </div>
+
+          {/* Buttons with GIFs */}
+          <div className="flex pt-2 flex-row items-center space-y-0 space-y-0 space-x-4 md:pt-6 lg:pt-6">
+            {/* Telegram Button */}
+            <a
+              href="https://t.me/motioncoineth"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={telegramButton}
+                alt="Telegram Button"
+                className="w-full md:w-28 lg:w-32 h-auto"
+              />
+            </a>
+
+            {/* Chart Button */}
+            <a
+              href="https://yourchartlink.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={chartButton}
+                alt="Chart Button"
+                className="w-full md:w-28 lg:w-32 h-auto"
+              />
+            </a>
+
+            {/* Twitter Button */}
+            <a
+              href="https://x.com/motioncoineth"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={twitterButton}
+                alt="Twitter Button"
+                className="w-full md:w-28 lg:w-32 h-auto"
+              />
+            </a>
+          </div>
         </div>
 
-        {/* Copy success message */}
-        {copySuccess && (
-          <p className="text-green-400 mt-2 text-sm">Copied to clipboard!</p>
-        )}
-
-        {/* Buttons with GIFs */}
-        <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4 mt-6">
-          {/* Telegram Button */}
-          <a
-            href="https://t.me/motioncoineth"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src={telegramButton}
-              alt="Telegram Button"
-              className="w-20 md:w-28 lg:w-32 h-auto"
-            />
-          </a>
-
-          {/* Chart Button */}
-          <a
-            href="https://yourchartlink.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src={chartButton}
-              alt="Chart Button"
-              className="w-20 md:w-28 lg:w-32 h-auto"
-            />
-          </a>
-
-          {/* Twitter Button */}
-          <a
-            href="https://x.com/motioncoineth"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src={twitterButton}
-              alt="Twitter Button"
-              className="w-20 md:w-28 lg:w-32 h-auto"
-            />
-          </a>
-        </div>
+        {/* Motion Globe Slow GIF - Parallel to Spiral GIF, Bottom-left and twice the size */}
+        <img
+          src={motionGlobeSlow}
+          alt="Motion Globe Slow"
+          className="hidden md:block absolute bottom-5 left-2 md:bottom-16 md:left-16 w-40 md:w-72 lg:w-80 mt-10"
+        />
       </div>
-
-      {/* Motion Globe Slow GIF - Parallel to Spiral GIF, Bottom-left and twice the size */}
-      <img
-        src={motionGlobeSlow}
-        alt="Motion Globe Slow"
-        className="absolute bottom-5 left-2 md:bottom-16 md:left-16 w-40 md:w-72 lg:w-80 mt-10"
-      />
     </div>
   );
 };

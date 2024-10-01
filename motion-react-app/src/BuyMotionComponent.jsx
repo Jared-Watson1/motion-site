@@ -5,7 +5,15 @@ import number3 from "./assets/number_3.png"; // Number 3 graphic
 
 const BuyMotionComponent = () => {
   return (
-    <div className="relative w-full min-h-screen px-8 md:px-16 lg:px-24 py-16 flex flex-col md:flex-row">
+    <div className="relative w-full px-8 md:px-16 lg:px-24 py-16 flex flex-col md:flex-row">
+      {/* Right GIF for mobile devices */}
+      <div className="md:hidden absolute top-10 left-0 w-full h-full flex justify-center">
+        <img
+          src={rightGif}
+          alt="Motion Circle Right Loop"
+          className="absolute top-0 left-0 w-full h-full opacity-20"
+        />
+      </div>
       {/* Text Content */}
       <div className="text-white max-w-2xl">
         {/* Heading */}
@@ -79,15 +87,6 @@ const BuyMotionComponent = () => {
           src={rightGif}
           alt="Motion Circle Right Loop"
           className="w-full h-auto"
-        />
-      </div>
-
-      {/* Right GIF for mobile devices */}
-      <div className="md:hidden mt-8 flex justify-center">
-        <img
-          src={rightGif}
-          alt="Motion Circle Right Loop"
-          className="w-64 h-auto"
         />
       </div>
     </div>

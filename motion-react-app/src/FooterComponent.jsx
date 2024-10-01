@@ -6,7 +6,7 @@ import twitterButton from "./assets/twitter_button.gif"; // Twitter button GIF
 const FooterComponent = () => {
   return (
     <div
-      className="relative w-full h-auto py-10 flex items-center justify-center bg-black"
+      className="relative w-full h-full py-10 flex items-center justify-center text-center bg-black"
       style={{
         backgroundImage: `url(${footerGif})`,
         backgroundSize: "cover",
@@ -14,7 +14,7 @@ const FooterComponent = () => {
       }}
     >
       {/* Buttons for social links */}
-      <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8">
+      <div className="flex pt-2 flex-row items-center space-y-0 space-y-0 space-x-4 md:pt-4 lg:pt-4">
         {/* Telegram Button */}
         <a
           href="https://t.me/yourtelegram"
