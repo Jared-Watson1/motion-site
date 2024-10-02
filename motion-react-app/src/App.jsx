@@ -137,9 +137,9 @@ function App() {
         <MainMotionComponent />
         <div className="my-5 lg:my-20" /> {/* Add spacing */}
         <MotionTextComponent />
-        <div className="my-5 pt-5 lg:my-20 pt-20" /> {/* Add spacing */}
+        <div className="my-5 lg:my-20 pt-20 mb-20" /> {/* Add spacing */}
         <BuyMotionComponent />
-        <div className="my-5 pt-5 lg:my-20 pt-20" /> {/* Add spacing */}
+        <div className="my-5 lg:my-20 pt-20 mt-20" /> {/* Add spacing */}
         <TokenomicsComponent />
       </div>
       <FooterComponent />
