@@ -43,7 +43,8 @@ const MainMotionComponent = () => {
       <img
         src={logo}
         alt="Logo"
-        className="absolute top-5 left-5 w-[12.5rem] md:w-[12.5rem]"
+        className="absolute top-5 left-5 w-12 md:w-16 lg:w-40"
+        loading="lazy" // Optional: Improve performance by lazy loading
       />
 
       {/* Falling Money GIF */}
@@ -65,6 +66,7 @@ const MainMotionComponent = () => {
         className="absolute top-5 right-5 z-20"
         onClick={toggleMenu}
         style={{ background: "none", border: "none" }}
+        aria-label="Open Menu" // Accessibility: Describe button purpose
       >
         <img
           src={menuButton}
@@ -91,6 +93,7 @@ const MainMotionComponent = () => {
             className="absolute top-4 right-4 z-40"
             onClick={toggleMenu}
             style={{ background: "none", border: "none" }}
+            aria-label="Close Menu" // Accessibility: Describe button purpose
           >
             <img src={closeButton} alt="Close Menu" className="w-8 h-8" />
           </button>
@@ -118,6 +121,7 @@ const MainMotionComponent = () => {
               href="https://dexscreener.com"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Dexscreener"
             >
               <img
                 src={dexscreenerIcon}
@@ -129,6 +133,7 @@ const MainMotionComponent = () => {
               href="https://t.me/motioncoineth"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Telegram"
             >
               <img src={telegramIcon} alt="Telegram" className="w-10 h-10" />
             </a>
@@ -136,6 +141,7 @@ const MainMotionComponent = () => {
               href="https://x.com/motioncoineth"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="X"
             >
               <img src={xIcon} alt="X" className="w-10 h-10" />
             </a>
@@ -143,6 +149,7 @@ const MainMotionComponent = () => {
               href="https://instagram.com/motioncoineth"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Instagram"
             >
               <img src={instagramIcon} alt="Instagram" className="w-10 h-10" />
             </a>
@@ -150,6 +157,7 @@ const MainMotionComponent = () => {
               href="https://tiktok.com/@motioncoineth"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="TikTok"
             >
               <img src={tiktokIcon} alt="TikTok" className="w-10 h-10" />
             </a>
@@ -195,6 +203,8 @@ const MainMotionComponent = () => {
               href="https://t.me/motioncoineth"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Telegram Button"
+              className="flex transform hover:scale-105 transition-transform duration-300"
             >
               <img
                 src={telegramButton}
@@ -208,6 +218,8 @@ const MainMotionComponent = () => {
               href="https://yourchartlink.com"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Chart Button"
+              className="flex transform hover:scale-105 transition-transform duration-300"
             >
               <img
                 src={chartButton}
@@ -221,6 +233,8 @@ const MainMotionComponent = () => {
               href="https://x.com/motioncoineth"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Twitter Button"
+              className="flex transform hover:scale-105 transition-transform duration-300"
             >
               <img
                 src={twitterButton}
