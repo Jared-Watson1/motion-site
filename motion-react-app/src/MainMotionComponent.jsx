@@ -43,7 +43,7 @@ const MainMotionComponent = () => {
       <img
         src={logo}
         alt="Logo"
-        className="absolute top-5 left-5 w-24 md:w-20"
+        className="absolute top-5 left-5 w-[12.5rem] md:w-[12.5rem]"
       />
 
       {/* Falling Money GIF */}

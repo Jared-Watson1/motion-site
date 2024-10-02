@@ -6,16 +6,17 @@ import number3 from "./assets/number_3.png"; // Number 3 graphic
 const BuyMotionComponent = () => {
   return (
     <div className="relative w-full px-8 md:px-16 lg:px-24 py-16 flex flex-col md:flex-row">
-      {/* Right GIF for mobile devices */}
-      <div className="md:hidden absolute top-10 left-0 w-full h-full flex justify-center">
+      {/* Mobile GIF: Visible on small screens, behind text, faded */}
+      <div className="md:hidden absolute top-10 left-0 w-full h-full flex justify-center z-0">
         <img
           src={rightGif}
           alt="Motion Circle Right Loop"
-          className="absolute top-0 left-0 w-full h-full opacity-20"
+          className="absolute top-0 left-0 w-full h-full object-cover opacity-20"
         />
       </div>
-      {/* Text Content */}
-      <div className="text-white max-w-2xl">
+
+      {/* Text Content: Positioned above GIFs, with padding on medium screens to prevent overlapping */}
+      <div className="relative z-10 text-white max-w-2xl md:pr-40">
         {/* Heading */}
         <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-red-500 via-green-500 to-blue-500 text-transparent bg-clip-text mb-8">
           HOW TO BUY $MOTION?
@@ -81,12 +82,12 @@ const BuyMotionComponent = () => {
         </div>
       </div>
 
-      {/* Right GIF for larger screens */}
-      <div className="hidden md:block absolute top-1/2 right-0 transform -translate-y-1/2 w-[20rem] md:w-[35rem] lg:w-[40rem] h-auto">
+      {/* Right GIF for larger screens: Visible on medium and larger, behind text on medium, fully visible on lg and above */}
+      <div className="hidden md:block absolute top-1/2 right-0 transform -translate-y-1/2 w-[20rem] md:w-[35rem] lg:w-[40rem] h-auto opacity-20 lg:opacity-100 z-0">
         <img
           src={rightGif}
           alt="Motion Circle Right Loop"
-          className="w-full h-auto"
+          className="w-full h-auto object-cover"
         />
       </div>
     </div>
