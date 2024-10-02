@@ -1,3 +1,4 @@
+// src/App.jsx
 import { useEffect, useRef, useState } from "react";
 import background from "./assets/background.png";
 import MainMotionComponent from "./MainMotionComponent";
@@ -107,7 +108,18 @@ function App() {
     // Show the loading screen
     return (
       <div className="flex items-center justify-center w-screen h-screen bg-black">
-        <img src={loadingGif} alt="Loading..." className="w-32 h-32" />
+        <img
+          src={loadingGif}
+          alt="Loading animation displaying motion graphics"
+          className="w-3/5 h-auto md:w-4/7 lg:w-5/9 object-contain"
+        />
+        {/* Alternatively, using arbitrary values for precise control:
+        <img
+          src={loadingGif}
+          alt="Loading animation displaying motion graphics"
+          className="max-w-[80vw] max-h-[80vh] object-contain"
+        />
+        */}
       </div>
     );
   }
