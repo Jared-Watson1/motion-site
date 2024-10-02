@@ -43,7 +43,7 @@ const MainMotionComponent = () => {
       <img
         src={logo}
         alt="Logo"
-        className="absolute top-5 left-5 w-12 md:w-16 lg:w-40"
+        className="absolute top-5 left-5 w-20 md:w-26 lg:w-40"
         loading="lazy" // Optional: Improve performance by lazy loading
       />
 
