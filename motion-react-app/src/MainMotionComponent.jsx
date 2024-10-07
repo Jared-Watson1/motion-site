@@ -244,16 +244,16 @@ const MainMotionComponent = () => {
         <div className="flex flex-col md:items-center justify-between space-y-6 md:space-y-0 md:space-x-6 mt-6">
           {/* Contract Address */}
           <div
-            className="bg-gray-900 bg-opacity-75 text-white py-2 px-4 rounded-lg border border-white flex items-center space-x-2 cursor-pointer"
+            className="bg-gray-900 bg-opacity-75 text-white py-2 px-4 rounded-lg border border-white flex items-center cursor-pointer max-w-full overflow-x-auto"
             onClick={copyToClipboard}
           >
-            <p className="text-sm md:text-lg font-mono flex items-center">
+            <p className="text-sm md:text-lg font-mono flex items-center break-all">
               CA: <span className="ml-1">{contractAddress}</span>
             </p>
             <img
               src={copyIcon}
               alt="Copy Icon"
-              className="w-4 h-4 md:w-5 md:h-5"
+              className="w-4 h-4 md:w-5 md:h-5 ml-2 flex-shrink-0"
             />
           </div>
           {/* Copy success message */}

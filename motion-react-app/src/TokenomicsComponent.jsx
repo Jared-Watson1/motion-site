@@ -1,3 +1,4 @@
+// src/TokenomicsComponent.jsx
 import pieChart from "./assets/pie_chart.png"; // Pie chart image
 import motionGif from "./assets/motion_linear_horizontal.gif"; // Motion linear GIF
 import globeGif from "./assets/motion_globe_white.gif"; // Globe GIF
@@ -71,16 +72,16 @@ const TokenomicsComponent = () => {
         <div className="w-full flex flex-col items-start space-y-6">
           {/* Contract Address */}
           <div
-            className="bg-gray-900 bg-opacity-75 text-white py-2 px-4 rounded-lg border border-white flex items-center space-x-2 cursor-pointer"
+            className="bg-gray-900 bg-opacity-75 text-white py-2 px-4 rounded-lg border border-white flex items-center cursor-pointer max-w-full overflow-x-auto"
             onClick={copyToClipboard}
           >
-            <p className="text-sm md:text-lg font-mono flex items-center">
+            <p className="text-sm md:text-lg font-mono flex items-center break-all">
               CA: <span className="ml-1">{contractAddress}</span>
             </p>
             <img
               src={copyIcon}
               alt="Copy Icon"
-              className="w-4 h-4 md:w-5 md:h-5"
+              className="w-4 h-4 md:w-5 md:h-5 ml-2 flex-shrink-0"
             />
           </div>
 
