@@ -23,7 +23,7 @@ const MainMotionComponent = () => {
   const [copySuccess, setCopySuccess] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const contractAddress = "0x1945E804B8A25b98ab140e58295404d768cA3F6B";
+  const contractAddress = "XXXXXXXXXXXXXXXXXXXXXXX";
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(contractAddress);

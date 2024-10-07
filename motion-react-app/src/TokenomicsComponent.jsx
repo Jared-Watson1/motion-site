@@ -10,7 +10,7 @@ import { useState } from "react"; // Import useState for copy functionality
 const TokenomicsComponent = () => {
   const [copySuccess, setCopySuccess] = useState(false);
 
-  const contractAddress = "0x1945E804B8A25b98ab140e58295404d768cA3F6B";
+  const contractAddress = "XXXXXXXXXXXXXXXXXXXXXXX";
 
   // Function to copy contract address to clipboard
   const copyToClipboard = () => {
