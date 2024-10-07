@@ -1,4 +1,3 @@
-// src/App.jsx
 import { useEffect, useRef, useState } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import background from "./assets/background.png";
@@ -8,8 +7,6 @@ import BuyMotionComponent from "./BuyMotionComponent";
 import TokenomicsComponent from "./TokenomicsComponent.jsx";
 import FooterComponent from "./FooterComponent";
 import loadingGif from "./assets/loading.gif";
-
-// Import all images used in your components
 import whiteLogo from "./assets/white_logo.png";
 import fallingMoneyGif from "./assets/falling_money.gif";
 import mainVideoGif from "./assets/main_video.gif";
@@ -126,7 +123,6 @@ function App() {
       }}
     >
       <div className="flex-grow">
-        {/* Add spacing between components */}
         <MainMotionComponent />
         <div className="my-5 lg:my-20" />
         <MotionTextComponent />
@@ -136,8 +132,6 @@ function App() {
         <TokenomicsComponent />
       </div>
       <FooterComponent />
-
-      {/* Include Vercel Analytics */}
       <Analytics />
     </div>
   );
