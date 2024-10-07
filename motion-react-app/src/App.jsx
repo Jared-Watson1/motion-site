@@ -1,12 +1,13 @@
 // src/App.jsx
 import { useEffect, useRef, useState } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import background from "./assets/background.png";
 import MainMotionComponent from "./MainMotionComponent";
 import MotionTextComponent from "./MotionTextComponent";
 import BuyMotionComponent from "./BuyMotionComponent";
 import TokenomicsComponent from "./TokenomicsComponent.jsx";
 import FooterComponent from "./FooterComponent";
-import loadingGif from "./assets/loading.gif"; // Import the loading GIF
+import loadingGif from "./assets/loading.gif";
 
 // Import all images used in your components
 import whiteLogo from "./assets/white_logo.png";
@@ -29,9 +30,9 @@ import tokenomicsInfoPng from "./assets/tokenomics_info.png";
 import footerGif from "./assets/footer.gif";
 
 function App() {
-  const [loading, setLoading] = useState(true); // State to manage loading
-  const backgroundRef = useRef(null); // Create a ref for the background div
-  const ticking = useRef(false); // Ref to prevent multiple rAF calls
+  const [loading, setLoading] = useState(true);
+  const backgroundRef = useRef(null);
+  const ticking = useRef(false);
 
   useEffect(() => {
     // Function to preload images
@@ -70,11 +71,11 @@ function App() {
 
       Promise.all(promises)
         .then(() => {
-          setLoading(false); // All images are loaded
+          setLoading(false);
         })
         .catch((err) => {
           console.error("Failed to load images", err);
-          setLoading(false); // Proceed even if some images fail to load
+          setLoading(false);
         });
     };
 
@@ -89,7 +90,7 @@ function App() {
             const scrollTop = window.pageYOffset;
             backgroundRef.current.style.backgroundPositionY = `${
               scrollTop * 0.5
-            }px`; // Adjust scroll speed
+            }px`;
           }
           ticking.current = false;
         });
@@ -100,12 +101,11 @@ function App() {
     window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll); // Cleanup on unmount
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   if (loading) {
-    // Show the loading screen
     return (
       <div className="flex items-center justify-center w-screen h-screen bg-black">
         <img
@@ -113,13 +113,6 @@ function App() {
           alt="Loading animation displaying motion graphics"
           className="w-3/5 h-auto md:w-4/7 lg:w-5/9 object-contain"
         />
-        {/* Alternatively, using arbitrary values for precise control:
-        <img
-          src={loadingGif}
-          alt="Loading animation displaying motion graphics"
-          className="max-w-[80vw] max-h-[80vh] object-contain"
-        />
-        */}
       </div>
     );
   }
@@ -135,14 +128,17 @@ function App() {
       <div className="flex-grow">
         {/* Add spacing between components */}
         <MainMotionComponent />
-        <div className="my-5 lg:my-20" /> {/* Add spacing */}
+        <div className="my-5 lg:my-20" />
         <MotionTextComponent />
-        <div className="my-5 lg:my-20 pt-20 mb-20" /> {/* Add spacing */}
+        <div className="my-5 lg:my-20 pt-20 mb-20" />
         <BuyMotionComponent />
-        <div className="my-5 lg:my-20 pt-20 mt-20" /> {/* Add spacing */}
+        <div className="my-5 lg:my-20 pt-20 mt-20" />
         <TokenomicsComponent />
       </div>
       <FooterComponent />
+
+      {/* Include Vercel Analytics */}
+      <Analytics />
     </div>
   );
 }
